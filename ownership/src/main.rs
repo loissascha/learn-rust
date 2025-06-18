@@ -39,6 +39,10 @@ fn main() {
 
     let len = calculate_length(&s3);
     println!("{} has length of: {}", s3, len);
+
+    let mut s5 = String::from("change me ");
+    change(&mut s5);
+    println!("changed {}", s5);
 }
 
 fn takes_ownership(some_string: String) {
@@ -64,4 +68,8 @@ fn takes_and_gives_back(a_string: String) -> String {
 fn calculate_length(s: &String) -> usize {
     let length = s.len();
     length
+}
+
+fn change(s: &mut String) {
+    s.push_str("changed!");
 }
