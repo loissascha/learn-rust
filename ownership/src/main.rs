@@ -42,6 +42,7 @@ fn main() {
 
     let mut s5 = String::from("change me ");
     change(&mut s5);
+    change(&mut s5);
     println!("changed {}", s5);
 }
 
