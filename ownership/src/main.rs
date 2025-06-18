@@ -37,7 +37,7 @@ fn main() {
     let s3 = takes_and_gives_back(s);
     println!("{}", s3);
 
-    let (s3, len) = calculate_length(s3);
+    let len = calculate_length(&s3);
     println!("{} has length of: {}", s3, len);
 }
 
@@ -60,7 +60,8 @@ fn takes_and_gives_back(a_string: String) -> String {
     a_string
 }
 
-fn calculate_length(s: String) -> (String, usize) {
+// use reference to variable to not give ownership
+fn calculate_length(s: &String) -> usize {
     let length = s.len();
-    (s, length)
+    length
 }
