@@ -9,10 +9,18 @@ fn main() {
 
     let y = 5;
     println!("The value of y is: {}", y);
+
+    let sum = sum(&x, &y);
+    println!("The sum of x and y is: {}", sum);
+
     let y = "six";
     println!("The value of y is: {}", y);
 }
 
 fn increase_num(num: &mut i32) {
     *num += 1;
+}
+
+fn sum(x: &i32, y: &i32) -> i32 {
+    x + y
 }
