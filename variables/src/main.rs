@@ -38,6 +38,10 @@ fn main() {
     for element in a.iter() {
         println!("for loop value: {}", element);
     }
+
+    for number in 1..4 {
+        println!("{}", number);
+    }
 }
 
 fn increase_num(num: &mut i32) {
