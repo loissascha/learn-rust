@@ -15,6 +15,29 @@ fn main() {
 
     let y = "six";
     println!("The value of y is: {}", y);
+
+    // loops can return values!
+    let mut counter = 0;
+    let result = loop {
+        counter += 1;
+        if counter == 10 {
+            break counter;
+        }
+    };
+    println!("result of loop is {}", result);
+
+    // while loop
+    let mut number = 3;
+    while number != 0 {
+        println!("while loop {}", number);
+        number -= 1;
+    }
+
+    // for loop
+    let a = [10, 20, 30, 40, 50];
+    for element in a.iter() {
+        println!("for loop value: {}", element);
+    }
 }
 
 fn increase_num(num: &mut i32) {
