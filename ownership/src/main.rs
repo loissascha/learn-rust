@@ -54,6 +54,9 @@ fn main() {
 
     let word2 = first_word(s2);
     println!("{}", word2);
+
+    let a = [1, 2, 3, 4, 5, 6];
+    let slice = &a[1..3];
 }
 
 fn takes_ownership(some_string: String) {
