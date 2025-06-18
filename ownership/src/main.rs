@@ -44,6 +44,16 @@ fn main() {
     change(&mut s5);
     change(&mut s5);
     println!("changed {}", s5);
+
+    let mut s = String::from("hello world");
+    let s2 = "hello world";
+
+    let word = first_word(&s);
+    // s.clear(); // errors because immutable reference in next line
+    // println!("{}", word);
+
+    let word2 = first_word(s2);
+    println!("{}", word2);
 }
 
 fn takes_ownership(some_string: String) {
@@ -73,4 +83,16 @@ fn calculate_length(s: &String) -> usize {
 
 fn change(s: &mut String) {
     s.push_str("changed!");
+}
+
+fn first_word(s: &str) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
 }
