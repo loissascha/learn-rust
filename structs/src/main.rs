@@ -40,11 +40,15 @@ fn main() {
         height: 50,
     };
 
-    println!("The area of the rectangle is {} square pixels.", area(rect));
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        area(&rect)
+    );
 }
 
-fn area(dimensions: Rectangle) -> u32 {
-    dimensions.width * dimensions.height
+fn area(rect: &Rectangle) -> u32 {
+    // <- & = reference because we don't want to take ownership
+    rect.width * rect.height
 }
 
 fn build_user(email: String, username: String) -> User {
