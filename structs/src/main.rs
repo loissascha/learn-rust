@@ -15,6 +15,9 @@ impl Rectangle {
     fn area(&self) -> u32 {
         self.width * self.height
     }
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width && self.height > other.height
+    }
 }
 
 fn main() {
@@ -57,6 +60,18 @@ fn main() {
         "The area of the rectangle is {} square pixels.",
         rect.area()
     );
+
+    let rect2 = Rectangle {
+        width: 15,
+        height: 30,
+    };
+    let rect3 = Rectangle {
+        width: 50,
+        height: 70,
+    };
+
+    println!("rect can hold rect2 {}", rect.can_hold(&rect2));
+    println!("rect can hold rect3 {}", rect.can_hold(&rect3));
 }
 
 // use struct methods instead (look on top)
