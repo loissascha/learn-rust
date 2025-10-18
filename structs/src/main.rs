@@ -11,6 +11,7 @@ struct Rectangle {
     height: u32,
 }
 
+// struct methods
 impl Rectangle {
     fn area(&self) -> u32 {
         self.width * self.height
@@ -20,6 +21,9 @@ impl Rectangle {
     }
 }
 
+// one struct can (but doesnt need to) have multiple impl blocks (later useful for traits)
+
+// associated functions
 impl Rectangle {
     fn square(size: u32) -> Rectangle {
         Rectangle {
