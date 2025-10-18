@@ -20,6 +20,15 @@ impl Rectangle {
     }
 }
 
+impl Rectangle {
+    fn square(size: u32) -> Rectangle {
+        Rectangle {
+            width: size,
+            height: size,
+        }
+    }
+}
+
 fn main() {
     let mut user1 = User {
         email: String::from("sascha@loishandl.at"),
@@ -72,6 +81,10 @@ fn main() {
 
     println!("rect can hold rect2 {}", rect.can_hold(&rect2));
     println!("rect can hold rect3 {}", rect.can_hold(&rect3));
+
+    let rect4 = Rectangle::square(50);
+
+    println!("square rect: {:#?}", rect4);
 }
 
 // use struct methods instead (look on top)
