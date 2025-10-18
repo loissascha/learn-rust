@@ -44,10 +44,9 @@ fn main() {
     let name = user1.username;
     user1.username = String::from("Vally");
 
-    let user2 = build_user(
-        String::from("sascha.loishandl@gmail.com"),
-        String::from("saschalois"),
-    );
+    let email = String::from("sascha.loishandl@gmail.com");
+    let user2 = build_user(email, String::from("saschalois"));
+    // println!("user built with email {}", email); <- can't do that because of ownership bullshit
 
     let user3 = User {
         email: String::from("someone@somehwere.com"),
