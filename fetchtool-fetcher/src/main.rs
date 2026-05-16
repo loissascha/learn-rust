@@ -1,7 +1,9 @@
-use which::which;
+use crate::commands::command_exists;
+
+mod commands;
 
 fn main() {
-    if which("fastfetch").is_ok() {
+    if command_exists("fastfetch") {
         println!("fastfetch available!");
     } else {
         println!("fastfetch not available!");
