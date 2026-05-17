@@ -1,9 +1,11 @@
 mod commands;
 
+const CMDS: &[&str] = &["fastfetch", "neofetch", "gofetch", "hyfetch", "cpufetch"];
+
 fn main() {
-    if commands::exists("fastfetch") {
-        println!("fastfetch available!");
-    } else {
-        println!("fastfetch not available!");
+    for s in CMDS {
+        if commands::exists(s) {
+            println!("{s}");
+        }
     }
 }
