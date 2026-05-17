@@ -7,5 +7,8 @@ fn main() {
         if commands::exists(s) {
             println!("{s}");
         }
+        else {
+            println!("!{s}");
+        }
     }
 }
